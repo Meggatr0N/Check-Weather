@@ -1,0 +1,230 @@
+/**
+* Template Name: Regna - v4.7.0
+* Template URL: https://bootstrapmade.com/regna-bootstrap-onepage-template/
+* Author: BootstrapMade.com
+* License: https://bootstrapmade.com/license/
+*/
+
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+body {
+  background: #fff;
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+a {
+  color: #eee;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+a:hover, a:active, a:focus {
+  color: white;
+  outline: none;
+  text-decoration: none;
+}
+
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  margin: 0 0 20px 0;
+  padding: 0;
+}
+
+
+
+/*--------------------------------------------------------------
+# Disable AOS delay on mobile
+--------------------------------------------------------------*/
+@media screen and (max-width: 768px) {
+  [data-aos-delay] {
+    transition-delay: 0s !important;
+  }
+}
+
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+#header {
+  margin-top: 7px;
+  transition: all 0.5s;
+  z-index: 997;
+  background: rgba(52, 59, 64, 0.9);
+}
+
+#header.header-transparent {
+  background: transparent;
+}
+
+#mail_logo {
+  font-size: 50px;
+}
+
+#loginn p{
+  font-family: "Poppins", sans-serif;
+  font-size: 30px;
+}
+
+#loginn .bi {
+  font-size: 30px;
+  padding: 5px 15px;
+}
+
+
+@media (max-width: 768px) {
+  #header{
+    margin-top: 0;
+  }
+
+  #mail_logo {
+    font-size: 40px;
+    margin-left: 10px;
+  }
+
+  #loginn p{
+    font-family: "Poppins", sans-serif;
+    font-size: 25px;
+  }
+
+  #loginn a {
+    font-size: 22px;
+    padding: 5px 15px;
+  }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  background: url(../img/hero-bg.jpg) center;
+  background-size: cover;
+  position: relative;
+}
+
+
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
+}
+
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+#hero h1 {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+#hero h2{
+  color: #eee;
+  font-size: 24px;
+}
+
+
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 32px;
+    line-height: 36px;
+    margin-bottom: 10px;
+  }
+
+  #hero h2 {
+    font-size: 20px;
+    line-height: 22px;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+
+
+
+
+
+.form-floating label{
+  color: #807979;
+  font-family: "Open Sans", sans-serif;
+  font-size: 16px;
+}
+
+
+
+#credent {
+  color: #ffcb00;
+  padding: 15px 0;
+}
+
+#credent i {
+  font-size:24px;
+}
+
+#credent h3 {
+  font-size: 20px;
+  padding: 0 10px;
+}
+
+#result_list ul{
+  padding-left: 0;
+  list-style-type: none;
+}
+
+
+
+
+section {
+  overflow: hidden;
+}
+
+
+.dropdown-menu {
+  background: #ffffff85;
+  padding: 0 0;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+  color: white;
+}

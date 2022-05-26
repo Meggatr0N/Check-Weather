@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Weather detector</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons <link href="../static/assets/img/favicon.png" rel="icon">-->
+  <link href="../static/assets/img/clouds.svg" rel="icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Poppins:300,400,500,700"
+        rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="../static/assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="../static/assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<header id="header" class="fixed-top d-flex align-items-center header-transparent">
+  <div class="container d-flex justify-content-between align-items-center">
+
+    <div>
+      <a id="mail_logo" class="bi bi-clouds" href="/"></a>
+    </div>
+
+    <div id="loginn" class="align-items-center d-inline-flex">
+      {% block navbar %}
+        {% if user.is_authenticated %}
+          <div class="dropdown">
+            <i class="bi bi-person" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"
+               type="button"></i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+              <li><a class="dropdown-item" href="user_page">Current city</a></li>
+              <li><a class="dropdown-item" href="logout">Logout</a></li>
+            </ul>
+          </div>
+        {% else %}
+          <a href="login">Login</a>
+        {% endif %}
+      {% endblock %}
+
+    </div>
+  </div>
+
+</header>
+
+
+<section id="hero">
+  <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+    <div>
+      {% block content %}
+
+        <h2>Welcome {% if user.is_authenticated %}{{ user.username|title }}{% endif %}</h2>
+        <h1>Weather detector</h1>
+        <h2>Check the current weather</h2>
+        <!-- url 'search_result' pk=post.pk -->
+
+        {% if messages %}
+          {% for message in messages %}
+            <div class="alert alert-danger" role="alert">
+              {{ message }}
+            </div>
+          {% endfor %}
+        {% endif %}
+
+        <form action="result" method="post">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <input type="text" class="form-control form-control-lg" name="city" placeholder="Сity search">
+          </div>
+          <div class="input-group justify-content-center align-items-center">
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"
+                     value="celsius" checked>
+              <label class="form-check-label" for="flexRadioDefault1">
+                Celsius
+              </label>
+            </div>
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2"
+                     value="kelvin">
+              <label class="form-check-label" for="flexRadioDefault2">
+                Kelvin
+              </label>
+            </div>
+
+            <div class="form-check mx-3">
+              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3"
+                     value="fahrenheit">
+              <label class="form-check-label" for="flexRadioDefault3">
+                Fahrenheit
+              </label>
+            </div>
+          </div>
+
+
+        </form>
+
+      {% endblock %}
+    </div>
+  </div>
+</section>
+
+
+<!-- Vendor JS Files -->
+<script src="../static/assets/vendor/aos/aos.js"></script>
+<script src="../static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<!-- Template Main JS File -->
+<script src="../static/assets/js/main.js"></script>
+
+</body>
+
+</html>

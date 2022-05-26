@@ -1,0 +1,72 @@
+{% extends 'index.html' %}
+{% load static %}
+
+
+{% block content %}
+
+
+  <div class="" id="result_list">
+
+
+    <ul>
+
+      <img src="http://openweathermap.org/img/wn/{{ icon }}@2x.png" height="150px">
+      <li>
+        <h1>
+          <a href="https://www.latlong.net/c/?lat={{ lat }}&long={{ lon }}"
+             target="_blank">{{ cityname }} ({{ countrycode }})
+          </a>
+        </h1>
+      </li>
+
+    </ul>
+
+    <div class="row">
+
+      <div class="col">
+        <ul>
+          <li class="mx-2">
+            <strong><i class="bi bi-thermometer-half mx-1"></i>Temperature: </strong> <h4>{{ temp }}</h4>
+          </li>
+          <li class="mx-2">
+            <strong><i class="bi bi-person mx-1"></i>Feels like: </strong> <h4>{{ feels_like }}</h4>
+          </li>
+          <li class="mx-2 row">
+            <strong><i class="bi bi-wind mx-1"></i>Wind speed: </strong> <h4>{{ wind }} {{ wind_speed }}</h4>
+          </li>
+        </ul>
+      </div>
+
+      <div class="col">
+        <ul>
+          <li class="mx-2"><strong>
+            <i class="bi bi-cloud mx-1"></i>Cloudiness: </strong> <h4>{{ clouds }}</h4>
+          </li>
+          <li class="mx-2"><strong>
+            <i class="bi bi-droplet mx-1"></i>Humidity: </strong> <h4>{{ humidity }}</h4>
+          </li>
+          <li class="mx-2"><strong>Pressure:  </strong> <h4>{{ pressure }}</h4>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="mt-5">
+    <a href="zero_city" type="button" class="btn btn-outline-light">
+      <i class="bi bi-plus-square mx-3"></i>Change city
+    </a>
+  </div>
+
+
+
+  <!--
+  if countrycode %}
+  ...
+  -->
+
+
+{% endblock %}
