@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-+o#0$q&h*b#oqdmoj@td_^3yui57_@9owzb0*7=levpj(=+!%n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['cityweathercheck.herokuapp.com', '127.0.0.1']
 
@@ -99,8 +99,21 @@ WSGI_APPLICATION = 'weatherdetector.wsgi.application'
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
 #}
-DATABASES = {}
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+ON_HEROKU = os.environ.get('ON_HEROKU')
+
+if ON_HEROKU:
+    DATABASE_URL = 'postgresql://<postgresql>'
+else:
+    DATABASE_URL = 'sqlite:///' + os.path.join(BASE_DIR, 'db.sqlite3')
+
+DATABASES = {'default': dj_database_url.config(default=DATABASE_URL, conn_max_age=600)}
+
+
+#DATABASES = {}
+#DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+#DATABASES['default'] =  dj_database_url.config()
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
