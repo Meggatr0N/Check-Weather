@@ -33,7 +33,7 @@ if os.path.isfile(dotenv_file):
 SECRET_KEY = 'django-insecure-+o#0$q&h*b#oqdmoj@td_^3yui57_@9owzb0*7=levpj(=+!%n'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['cityweathercheck.herokuapp.com', '127.0.0.1']
 
