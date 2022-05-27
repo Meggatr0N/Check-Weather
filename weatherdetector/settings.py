@@ -12,8 +12,9 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+
+
 import dj_database_url
-import django_on_heroku
 import dotenv
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -170,7 +171,8 @@ LOGGING = {
 
 
 
-# This should already be in your settings.py
+# Configure Django App for Heroku.
+import django_on_heroku
 django_on_heroku.settings(locals())
 
 # This is new
